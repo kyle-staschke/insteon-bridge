@@ -1,4 +1,4 @@
-# insteon-bridge
+# insteon-server
 A reversed engineered implementation of the now out-of-bussiness Insteon bridge servers. This project was created by reverse engineering and re-implementing a server solution which maintains the last updated netwroking protocols of the Insteon devices.
 
 See [CHANGELOG][].
