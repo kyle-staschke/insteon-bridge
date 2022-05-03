@@ -1,0 +1,143 @@
+{
+  "pluginAlias": "InsteonLocal",
+  "pluginType": "platform",
+  "alias": "InsteonLocal",
+  "platform": true,
+  "accessory": false,
+  "singular": true,
+  "headerDisplay": "Homebridge platform plugin for local Insteon control.",
+  "footerDisplay": "See [CHANGELOG](https://github.com/kuestess/homebridge-platform-insteonlocal/blob/master/CHANGELOG.md).",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string",
+        "default": "InsteonLocal",
+        "required": true
+      },
+      "user": {
+        "title": "User",
+        "type": "string",
+        "placeholder": "Username from Insteon app"
+      },
+      "pass": {
+        "$title": "Pass",
+        "type": "string",
+        "placeholder": "Password from Insteon app"
+      },
+      "host": {
+        "title": "Host",
+        "type": "string",
+        "placeholder": "Local IP address of your Insteon hub"
+      },
+      "port": {
+        "title": "Port",
+        "type": "string",
+        "default": "25105",
+        "placeholder": "Port from Insteon app [usually 25105]"
+      },
+      "model": {
+        "title": "Model",
+        "type": "string",
+        "default": "2245",
+        "oneOf": [
+          { "title": "2245", "enum": ["2245"] },
+          { "title": "2243", "enum": ["2243"] },
+          { "title": "2242", "enum": ["2242"] },
+          { "title": "PLM", "enum": ["PLM"] }
+        ]
+      },
+      "refresh": {
+        "title": "Refresh",
+        "type": "string",
+        "default": "0"
+      },
+      "server_port": {
+        "title": "Server Port",
+        "type": "string",
+        "default": "3000"
+      },
+      "keepAlive": {
+        "title": "Keep Alive",
+        "type": "string",
+        "default": "3600"
+      },
+      "devices": {
+        "title": "Devices",
+        "expandable": true,
+        "type": "array",
+        "required": false,
+        "items": {
+          "title": "Device",
+          "type": "object",
+          "properties": {
+            "name": {
+              "title": "Name",
+              "type": "string",
+              "placeholder": "Enter device name",
+              "required": true
+            },
+            "deviceID": {
+              "title": "Device ID",
+              "type": "string",
+              "placeholder": "Insteon device id",
+              "required": true
+            },
+            "dimmable": {
+              "title": "Dimmable",
+              "type": "string",
+              "required": true,
+              "oneOf": [
+                  { "title": "yes", "enum": ["yes"] },
+                  { "title": "no", "enum": ["no"] }
+              ]
+            },
+            "deviceType": {
+              "title": "Device Type",
+              "type": "string",
+              "required": true,
+              "oneOf": [
+                { "title": "lightbulb", "enum": ["lightbulb"] },
+                { "title": "dimmer", "enum": ["dimmer"] },
+                { "title": "switch", "enum": ["switch"] },
+                { "title": "scene", "enum": ["scene"] },
+                { "title": "remote", "enum": ["remote"] },
+                { "title": "iolinc", "enum": ["iolinc"] },
+                { "title": "motionsensor", "enum": ["motionsensor"] },
+                { "title": "leaksensor", "enum": ["leaksensor"] },
+                { "title": "doorsensor", "enum": ["doorsensor"] },
+                { "title": "outlet", "enum": ["outlet"] },
+                { "title": "keypad", "enum": ["keypad"] },
+                { "title": "shades", "enum": ["shades"] },
+                { "title": "blinds", "enum": ["blinds"] },
+                { "title": "smoke", "enum": ["smoke"] },
+                { "title": "fan", "enum": ["fan"] }
+              ]
+            },
+            "groupID": {
+              "title": "Group ID",
+              "type": "string"
+            },
+            "keypadbtn": {
+              "title": "Keypad Button",
+              "type": "string"
+            },
+            "groupMembers": {
+              "title": "Group Members",
+              "type": "string"
+            },
+            "position": {
+              "title": "Position (outlet only)",
+              "type": "string",
+              "oneOf": [
+                { "title": "top", "enum": ["top"] },
+                { "title": "bottom", "enum": ["bottom"] }
+              ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
