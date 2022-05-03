@@ -1,7 +1,5 @@
-[![Support via PayPal][paypal-button]][paypal-kuestess]
-
-# homebridge-platform-insteonlocal
-Homebridge platform plugin for local Insteon control
+# insteon-bridge
+A reversed engineered implementation of the now out-of-bussiness Insteon bridge servers. This project was created by reverse engineering and re-implementing a server solution which maintains the last updated netwroking protocols of the Insteon devices.
 
 See [CHANGELOG][].
 
@@ -9,7 +7,7 @@ See [CHANGELOG][].
 
 Overview
 --------
-Implements local control of Insteon devices including switches, dimmers, outlets, fans, blinds, scenes, iolincs (configured as a garage door), motion sensors, door/window sensors, and leak sensors via Homebridge. Leverages [home-controller](https://github.com/automategreen/home-controller) to enable control and status of multiple Insteon devices.  Supports both Insteon Hub 2242 and 2245 and now has beta support for running directly on a Hub Pro (thanks to @rasod).
+Implements local control of Insteon devices including switches, dimmers, outlets, fans, blinds, scenes, iolincs (configured as a garage door), motion sensors, door/window sensors, and leak sensors via Homebridge. Leverages home-controller to enable control and status of multiple Insteon devices.  Supports both Insteon Hub 2242 and 2245 and now has beta support for running directly on a Hub Pro (thanks to @rasod).
 
 Devices are not yet auto-discovered and must be defined in config.json (see configuration example)
 
@@ -203,12 +201,3 @@ uboot_overlay_addr3=/lib/firmware/BB-UART5-00A0.dtbo
 
 8. Reboot and log back in (same as step 4 & 5)
 9. Install homebridge and this plug as usual seting the model in config.json to 2243
-
-Donate
------------------------------------
-If you find this plugin useful you may make a donation using the button below.  Donations are not expected, but appreciated!
-
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AP4SUF96E39GU)
-
-[paypal-button]: https://img.shields.io/badge/Donate-PayPal-green.svg
-[paypal-kuestess]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AP4SUF96E39GU
